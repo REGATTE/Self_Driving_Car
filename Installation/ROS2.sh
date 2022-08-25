@@ -63,7 +63,7 @@ if [[ $(lsb_release -sc) == "focal" ]]; then
     colcon build
     cd
 
-    echo "source ~/ros2_ws/install/setup.sh" >> ~/.bashrc
+    echo "source ~/ros2_ws/install/setup.bash" >> ~/.bashrc
     source ~/.bashrc
 
 elif [[ $(lsb_release -sc) == "jammy" ]]; then
@@ -115,7 +115,7 @@ elif [[ $(lsb_release -sc) == "jammy" ]]; then
     colcon build
     cd
 
-    echo "source ~/ros2_ws/install/setup.sh" >> ~/.bashrc
+    echo "source ~/ros2_ws/install/setup.bash" >> ~/.bashrc
     source ~/.bashrc
 else
     ntfy send "Ubuntu Version not compatible."
