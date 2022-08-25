@@ -1,0 +1,14 @@
+# ivy - unifyai (trial)
+ivy == 6.4.1
+ivy-builder == 1.1.9
+ivy-vision == 1.1.9
+
+# Main Requirements
+numpy
+pandas
+matplotlib
+opencv-python
+opencv-contrib-python
+## instaling both ML frameworks to test which is better.
+tensorflow == 2.9.1
+pytorch == 1.0.2 

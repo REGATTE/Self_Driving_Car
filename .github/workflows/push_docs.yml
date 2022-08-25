@@ -1,0 +1,6 @@
+name: push_docs
+on: [push]
+jobs:
+  update-docs:
+    runs-on: ubuntu-latest
+    steps:
