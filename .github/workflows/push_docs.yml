@@ -3,4 +3,32 @@ on: [push]
 jobs:
   update-docs:
     runs-on: ubuntu-latest
+    env:
+       APPLICATION_ID: ${{ secrets.APPLICATION_ID }}
+       API_KEY: ${{ secrets.API_KEY }}
+
     steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+      
+      - name: NPM install
+        run: |
+          cd docs
+          npm install && npm run build
+      
+      - name: Create .nojekyll file for GitHub Pages
+        run: |
+          touch docs/build/.nojekyll
+          
+      - name: Deploy to GitHub Pages
+        if: success()
+        uses: crazy-max/ghaction-github-pages@v2
+        with:
+          target_branch: gh-pages
+          build_dir: ./docs/build
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
