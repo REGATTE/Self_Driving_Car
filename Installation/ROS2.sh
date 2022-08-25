@@ -52,6 +52,7 @@ if [[ $(lsb_release -sc) == "focal" ]]; then
     sudo pip3 install -U empy pyros-genmsg setuptools
     sudo apt install ros-foxy-gazebo-ros-pkgs
 
+    sudo pip install -U rosdep
     sudo rosdep init
     rosdep update
 
@@ -103,8 +104,9 @@ elif [[ $(lsb_release -sc) == "jammy" ]]; then
     sudo pip3 install -U empy pyros-genmsg setuptools
     sudo apt install ros-humble-gazebo-ros-pkgs
 
+    sudo pip install -U rosdep
     sudo rosdep init
-        rosdep update
+    rosdep update
 
     echo "Done installing ROS2 - HUMBLE"
 
